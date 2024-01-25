@@ -31,12 +31,12 @@ citation:
   type: article-journal
   container-title: "Computo"
   doi: "xxxx"
-  url: https://computo.sfds.asso.fr/template-computo-quarto
+  url: https://computo.sfds.asso.fr/published_202401_adrat_repulsion/
   publisher: "Société Française de Statistique"
   issn: "2824-7795"
 bibliography: references.bib
 github-user: computorg
-repo: "template-computo-python"
+repo: "published_202401_adrat_repulsion/"
 draft: false # set to false once the build is running
 published: true # will be set to true once accepted
 format:
