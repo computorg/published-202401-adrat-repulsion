@@ -19,7 +19,7 @@ author:
           department: Computer Science
           url: https://telecom-paris.fr
 
-date: last-modified
+date: 01/25/2024
 date-modified: last-modified
 # description: |
 #   This document provides a template based on the [`quarto`](https://quarto.org/) system for contributions to Computo, using the [`quarto journal extension`](https://github.com/computorg/computo-quarto-extension), the Jupyter kernel (Python user) and `venv+pip` to set-up the dependencies.
@@ -30,7 +30,7 @@ keywords: [classification, point process, repulsion]
 citation:
   type: article-journal
   container-title: "Computo"
-  doi: "xxxx"
+  doi: "10.57750/3r07-aw28"
   url: https://computo.sfds.asso.fr/published_202401_adrat_repulsion/
   publisher: "Société Française de Statistique"
   issn: "2824-7795"
@@ -38,6 +38,7 @@ bibliography: references.bib
 github-user: computorg
 repo: "published_202401_adrat_repulsion/"
 draft: false # set to false once the build is running
+google-scholar: true
 published: true # will be set to true once accepted
 format:
   computo-html: default
