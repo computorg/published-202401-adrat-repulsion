@@ -32,7 +32,7 @@ citation:
   container-title: "Computo"
   doi: "10.57750/3r07-aw28"
   url: https://computo.sfds.asso.fr/published_202401_adrat_repulsion/
-  publisher: "Société Française de Statistique"
+  publisher: ""French Statistical Society"
   issn: "2824-7795"
 bibliography: references.bib
 github-user: computorg
