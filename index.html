@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -248,7 +248,7 @@ ISSN 2824-7795</p>
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">April 28, 2024</p>
+        <p class="date-modified">May 17, 2024</p>
       </div>
     </div>
       
@@ -371,7 +371,7 @@ Figure&nbsp;2: On the left, Voronoi cells associated to a realization of a Ginib
 <p>The Cartoradio web site contains the locations (in GPS coordinates) and other informations about all the antennas (or base stations) in metropolitan France for any operator, any frequency band and all generation of wireless systems (2G to 5G). The capacity of an antenna depends on its power and on the traffic demand it has to serve. Outside metropolitan areas, the antennas are relatively scarce and located along the main roads to guarantee a large surface coverage (around 30 km<span class="math inline">^2</span>). Hence there is no need to construct models for these regions. On the contrary, in big towns, the density of base stations is much higher to handle the traffic demand: An antenna covers around half a squared kilometer. This is where the dimensioning problem do appear. One should have a sufficient number of antennas per unit of surface to transport all the traffic, on the other hand, base stations operating in a given frequency band cannot be to close to mitigate interference. This explains the right picture of <a href="#fig-paris-orange" class="quarto-xref">Figure&nbsp;1</a>.</p>
 <p>When it comes to assess the type of point process we should consider in this situation, we cannot consider the city as a whole: the geography (notably the Seine river in Paris, the parks, etc.), the non uniformity of demands (the traffic is heavier aroung railway stations or touristic sites, for instance) which entails a higher density of antennas, ruin any kind of invariance a statistician could hope for. For instance, the lack of homogeneity prevents the use of traditional repulsion criteria, such as pair correlation. That means, we should restrict our expectations to local models of the size of a district or a bit more. Since interference, which are the main annoyance to be dealt with, are a local phenomenon, working on a partial part of the whole domain is sufficient to predict the behavior and dimension a wireless network.</p>
 <p>In the following sections, we will use Python code that assumes that the following packages have been loaded:</p>
-<div id="e5c860f1" class="cell" data-execution_count="1">
+<div id="904c693f" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Hide/Show the code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -388,7 +388,7 @@ Figure&nbsp;2: On the left, Voronoi cells associated to a realization of a Ginib
 <h3 data-number="3.1" class="anchored" data-anchor-id="statistical-approach"><span class="header-section-number">3.1</span> Statistical approach</h3>
 <p>Given a circular domain with <span class="math inline">N</span> points, we want to decide whether the points exhibit repulsion or not. To do so, we will begin with a statistical approach, where we will first calculate, for Poisson processes as well as for Ginibre and <span class="math inline">\beta</span>-Ginibre processes, the probability that the ratio <span class="math inline">R = \frac{4 \pi S}{P^2}</span> of the central cell is less than or equal to <span class="math inline">r</span>, for values of <span class="math inline">r</span> ranging from <span class="math inline">0</span> to <span class="math inline">1</span>. And then we apply the same approach using the mean ratio of the five central cells. Finally, we will calculate <span class="math inline">95</span>% confidence intervals for each of these processes.</p>
 <p>The following code illustrates the generation of various point samples and the calculation of the surface to squared perimeter ratios given the number of points <span class="math inline">N</span> and the parameter <span class="math inline">\beta</span> for <span class="math inline">\beta</span>-Ginibre processes. The Ginibre and <span class="math inline">\beta</span>-Ginibre processes are generated using the “sample” function given in the Python code of <span class="citation" data-cites="MR4279876">Laurent Decreusefond and Moroz (<a href="#ref-MR4279876" role="doc-biblioref">2021</a>)</span>.</p>
-<div id="4ad2fcae" class="cell" data-execution_count="2">
+<div id="890ac24d" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Hide/Show the code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> in_box(towers, bounding_box):</span>
@@ -516,7 +516,7 @@ Compiling functions ...</code></pre>
 </div>
 </div>
 <p>The simulation algorithm provides a method for computing the quantity <span class="math inline">\mathbb{P} \left( \frac{4 \pi S}{P^2} \le r \right)</span> as a function of <span class="math inline">r</span> for the Ginibre processes (the same algorithm is applied to other processes as well). The Algorithm takes as input the number of points <span class="math inline">N</span>, the number of experiences for the simulation <span class="math inline">N_{exp}</span> and the range of the variable <span class="math inline">r</span> as a list of values. Since the simulations require a lot of time to run, we are not going to attach the associated Python code, the latter is based on the algorithm described in the following Python code using the functions defined previously.</p>
-<div id="1b8bae82" class="cell" data-execution_count="3">
+<div id="71339b7e" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Hide/Show the code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulation(N, N_exp, list_r):</span>
@@ -565,7 +565,7 @@ Figure&nbsp;3: Simulation results using the central cell (up) and the five centr
 <section id="machine-learning-approach" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="machine-learning-approach"><span class="header-section-number">3.2</span> Machine Learning approach</h3>
 <p>In this approach, we will use the same circular domain with <span class="math inline">N</span> points as in the statistical approach. Since the repulsion is not sensitive to scaling, we normalize the radius to <span class="math inline">R=\sqrt{N}</span>. This is due to the fact that a cloud drawn from a Ginibre point process of intensity <span class="math inline">1</span> with <span class="math inline">N</span> points occupies roughly a disk with this radius. We begin by generating the data of the Ginibre process, the <span class="math inline">0.7</span>-Ginibre process and the poisson process on which we will train the classification model, which is a Logistic Regression Classifier. Using only the central cell (respectively the five most central cells), the initial variables in our database consist of the surface and perimeter of the central cell (respectively surfaces and perimeters of the five central cells) of each generated sample, along with a binary variable that takes the value <span class="math inline">1</span> if the process is repulsive and <span class="math inline">0</span> otherwise. Subsequently, we add the ratio variable <span class="math inline">\frac{4 \pi S}{P^2}</span> of the central cell (respectively the five ratios of the five central cells) to provide the classification model with additional information on which to base its predictions. The output of the classifier is a composite score based on some statistics of the point process, tuned to discriminate between a Poisson process and a repulsive point process.</p>
-<div id="3d3d0c3b" class="cell" data-execution_count="4">
+<div id="928798b6" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Hide/Show the code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dataframe_1cell(N, observations):</span>
@@ -602,7 +602,7 @@ Figure&nbsp;3: Simulation results using the central cell (up) and the five centr
 </details>
 </div>
 <p>As the generation of data requires considerable execution time, we will prepare the data locally (using the previous code), by generating, for each classification, a sample of <span class="math inline">5000</span> observations (<span class="math inline">2500</span> repulsive and <span class="math inline">2500</span> non-repulsive) of <span class="math inline">N = 50</span> points. Then we read them directly as follows:</p>
-<div id="0114f17a" class="cell" data-execution_count="5">
+<div id="3e2c8bd1" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Hide/Show the code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>beta_ginibre_data_1 <span class="op">=</span> pd.read_csv(<span class="st">'data/beta_ginibre_1cell.csv'</span>, sep<span class="op">=</span><span class="st">','</span>)</span>
@@ -613,7 +613,7 @@ Figure&nbsp;3: Simulation results using the central cell (up) and the five centr
 </details>
 </div>
 <p>Here is an example of the data created of configurations of <span class="math inline">0.7</span>-Ginibre and poisson processes with one cell:</p>
-<div id="10a13cd1" class="cell" data-execution_count="6">
+<div id="2eb2b06c" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Hide/Show the code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>beta_ginibre_data_1.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -677,7 +677,7 @@ Figure&nbsp;3: Simulation results using the central cell (up) and the five centr
 </div>
 </div>
 <p>Before starting the model’s training using the data generated, we will scale the data in order to avoir the concern of overfitting. Here is an example of the scaling of the previous data:</p>
-<div id="d4e10b7f" class="cell" data-execution_count="7">
+<div id="718e060d" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Hide/Show the code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>b_ginibre_1 <span class="op">=</span> beta_ginibre_data_1.copy()</span>
@@ -757,7 +757,7 @@ Figure&nbsp;3: Simulation results using the central cell (up) and the five centr
 </div>
 </div>
 <p>Now that the data is gathered, we will train the Logistic Regression model using the baseline model, i.e.&nbsp;all the hyperparameters’ values are taken as defaults, (a grid search can be used later in order to select the optimal hyperparameters). Other classification models (Random Forest, Support Vector Machine and XGBoost) have been tested but did not yield more significant results than the chosen classifier. We split each data to a train data and test data in order to see the model’s accuracy before testing it on the cartoradio data.</p>
-<div id="7f10e13a" class="cell" data-execution_count="8">
+<div id="9083de97" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Hide/Show the code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.pipeline <span class="im">import</span> make_pipeline</span>
@@ -813,7 +813,7 @@ Figure&nbsp;3: Simulation results using the central cell (up) and the five centr
 </details>
 </div>
 <p>Here are the results of the classification using each data: - <span class="math inline">0.7</span>-Ginibre Vs Poisson using the central cell:</p>
-<div id="5b4c4bf0" class="cell" data-execution_count="9">
+<div id="6aeb999d" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Hide/Show the code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>beta_X1 <span class="op">=</span> b_ginibre_1[[<span class="st">'S1'</span>, <span class="st">'P1'</span>, <span class="st">'R1'</span>]].values</span>
@@ -846,7 +846,7 @@ weighted avg       0.62      0.62      0.62      1500
 <ul>
 <li>Ginibre Vs Poisson using the central cell:</li>
 </ul>
-<div id="08374a82" class="cell" data-execution_count="10">
+<div id="71167dc2" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Hide/Show the code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>X1 <span class="op">=</span> ginibre_1[[<span class="st">'S1'</span>, <span class="st">'P1'</span>, <span class="st">'R1'</span>]].values</span>
@@ -879,7 +879,7 @@ weighted avg       0.70      0.70      0.70      1500
 <ul>
 <li><span class="math inline">0.7</span>-Ginibre Vs Poisson using the five central cells:</li>
 </ul>
-<div id="ca92acd7" class="cell" data-execution_count="11">
+<div id="04c25dd8" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Hide/Show the code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>beta_X2 <span class="op">=</span> b_ginibre_2[[<span class="st">'S1'</span>, <span class="st">'P1'</span>, <span class="st">'R1'</span>, <span class="st">'S2'</span>, <span class="st">'P2'</span>, <span class="st">'R2'</span>, <span class="st">'S3'</span>, <span class="st">'P3'</span>, <span class="st">'R3'</span>, <span class="st">'S4'</span>, <span class="st">'P4'</span>, <span class="st">'R4'</span>, <span class="st">'S5'</span>, <span class="st">'P5'</span>, <span class="st">'R5'</span>]].values</span>
@@ -912,7 +912,7 @@ weighted avg       0.73      0.73      0.73      1500
 <ul>
 <li>Ginibre Vs Poisson using the five central cells:</li>
 </ul>
-<div id="2b7bcdc4" class="cell" data-execution_count="12">
+<div id="28177c24" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Hide/Show the code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>X2 <span class="op">=</span> ginibre_2[[<span class="st">'S1'</span>, <span class="st">'P1'</span>, <span class="st">'R1'</span>, <span class="st">'S2'</span>, <span class="st">'P2'</span>, <span class="st">'R2'</span>, <span class="st">'S3'</span>, <span class="st">'P3'</span>, <span class="st">'R3'</span>, <span class="st">'S4'</span>, <span class="st">'P4'</span>, <span class="st">'R4'</span>, <span class="st">'S5'</span>, <span class="st">'P5'</span>, <span class="st">'R5'</span>]].values</span>
@@ -959,7 +959,7 @@ Figure&nbsp;4: On the left, Initial cartoradio configuration. On the right, Samp
 </figure>
 </div>
 <p>In the following, we read the cartoradio data directly from the “cartoradio_data.csv” file, then we add the variables that represent the ratio of the first five central cell and finally we scale the data. Here is the final (scaled) data on which we will test our model.</p>
-<div id="3dd2c30d" class="cell" data-execution_count="13">
+<div id="a87d6b63" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Hide/Show the code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>cartoradio <span class="op">=</span> pd.read_csv(<span class="st">'data/cartoradio_data.csv'</span>, sep<span class="op">=</span><span class="st">','</span>)</span>
@@ -1107,7 +1107,7 @@ Figure&nbsp;4: On the left, Initial cartoradio configuration. On the right, Samp
 <ul>
 <li><span class="math inline">0.7</span>-Ginibre Vs Poisson using the central cell:</li>
 </ul>
-<div id="a0253812" class="cell" data-execution_count="14">
+<div id="7860dc6c" class="cell" data-execution_count="14">
 <details class="code-fold">
 <summary>Hide/Show the code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Classification results:'</span>, beta_LR1.predict(np.array(cartoradio_scaled_1)))</span>
@@ -1131,7 +1131,7 @@ Classification probabilities:
 <ul>
 <li>Ginibre Vs Poisson using the central cell:</li>
 </ul>
-<div id="36774b81" class="cell" data-execution_count="15">
+<div id="bee9fde9" class="cell" data-execution_count="15">
 <details class="code-fold">
 <summary>Hide/Show the code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Classification results:'</span>, LR1.predict(np.array(cartoradio_scaled_1)))</span>
@@ -1156,7 +1156,7 @@ Classification probabilities:
 <ul>
 <li><span class="math inline">0.7</span>-Ginibre Vs Poisson using the five central cell:</li>
 </ul>
-<div id="ca526906" class="cell" data-execution_count="16">
+<div id="f31c58fa" class="cell" data-execution_count="16">
 <details class="code-fold">
 <summary>Hide/Show the code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Classification results:'</span>, beta_LR2.predict(np.array(cartoradio_scaled)))</span>
@@ -1180,7 +1180,7 @@ Classification probabilities:
 <ul>
 <li>Ginibre Vs Poisson using the five central cell:</li>
 </ul>
-<div id="8d9a0197" class="cell" data-execution_count="17">
+<div id="a898dd68" class="cell" data-execution_count="17">
 <details class="code-fold">
 <summary>Hide/Show the code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Classification results:'</span>, LR2.predict(np.array(cartoradio_scaled)))</span>
