@@ -36,7 +36,7 @@ citation:
   issn: "2824-7795"
 bibliography: references.bib
 github-user: computorg
-repo: "published_202401_adrat_repulsion/"
+repo: "published_202401_adrat_repulsion"
 draft: false # set to false once the build is running
 google-scholar: true
 published: true # will be set to true once accepted
