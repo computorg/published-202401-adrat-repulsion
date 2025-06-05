@@ -25,7 +25,6 @@ date-modified: last-modified
 #   This document provides a template based on the [`quarto`](https://quarto.org/) system for contributions to Computo, using the [`quarto journal extension`](https://github.com/computorg/computo-quarto-extension), the Jupyter kernel (Python user) and `venv+pip` to set-up the dependencies.
 abstract: >+
     In numerous applications, cloud of points do seem to exhibit *repulsion* in the intuitive sense that there is no local cluster as in a Poisson process. Motivated by data coming from cellular networks, we devise a classification algorithm based on the form of the Voronoi cells. We show that, in the particular set of data we are given, we can retrieve some repulsiveness between antennas, which was expected for engineering reasons.
-
 keywords: [classification, point process, repulsion]
 citation:
   type: article-journal
@@ -36,7 +35,7 @@ citation:
   issn: "2824-7795"
 bibliography: references.bib
 github-user: computorg
-repo: "published_202401_adrat_repulsion"
+repo: "published-202401-adrat-repulsion"
 draft: false # set to false once the build is running
 google-scholar: true
 published: true # will be set to true once accepted
