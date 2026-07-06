@@ -8,5 +8,5 @@ dependencies:
   - scipy
   - seaborn
   - scikit-learn
-  - numpy=1.24
+  - numpy
   - numba
