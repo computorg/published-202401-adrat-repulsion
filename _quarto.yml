@@ -2,8 +2,10 @@ project:
   title: "Point Process Discrimination According to Repulsion"
   type: website
   render:
-    - published-202401-adrat-repulsion.qmd
+    - main.qmd
+    - README.qmd
 
+status: published
 format:
   computo-html:
     code-fold: true
