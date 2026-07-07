@@ -26,7 +26,7 @@ author:
         - name: Telecom Paris
           department: Computer Science
           url: https://telecom-paris.fr
-date: 01/25/2024
+date: 2024-01-25
 abstract: >+
     In numerous applications, cloud of points do seem to exhibit *repulsion* in the intuitive sense that there is no local cluster as in a Poisson process. Motivated by data coming from cellular networks, we devise a classification algorithm based on the form of the Voronoi cells. We show that, in the particular set of data we are given, we can retrieve some repulsiveness between antennas, which was expected for engineering reasons.
 citation:
@@ -36,6 +36,7 @@ citation:
   publisher: "French Statistical Society"
   issn: "2824-7795"
   url: "https://computo-journal.org/published-202401-adrat-repulsion/"
+  issued: "2024-01-25"
 related-identifiers:
   - relation: IsVersionOf
     type: URL
