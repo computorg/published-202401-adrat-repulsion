@@ -36,6 +36,10 @@ citation:
   publisher: "French Statistical Society"
   issn: "2824-7795"
   url: "https://computo-journal.org/published-202401-adrat-repulsion/"
+related-identifiers:
+  - relation: IsVersionOf
+    type: URL
+    identifier: "https://hal.science/hal-04478587v1"
 github-user: computorg
 repo: "published-202401-adrat-repulsion"
 format:
