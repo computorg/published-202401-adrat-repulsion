@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: If you use or cite this article, please use the metadata provided in 'preferred-citation'.
+title: Point Process Discrimination According to Repulsion
+authors:
+- family-names: Adrat
+  given-names: Hamza
+  orcid: https://orcid.org/0009-0004-8155-3260
+  affiliation: Mohammed VI Polytechnic University, EMINES - School of Industrial Management
+- family-names: Decreusefond
+  given-names: Laurent
+  orcid: https://orcid.org/0000-0002-8964-0957
+  affiliation: Telecom Paris, Computer Science
+url: https://computo-journal.org/published-202401-adrat-repulsion/
+preferred-citation:
+  type: article
+  title: Point Process Discrimination According to Repulsion
+  authors:
+  - family-names: Adrat
+    given-names: Hamza
+    orcid: https://orcid.org/0009-0004-8155-3260
+    affiliation: Mohammed VI Polytechnic University, EMINES - School of Industrial
+      Management
+  - family-names: Decreusefond
+    given-names: Laurent
+    orcid: https://orcid.org/0000-0002-8964-0957
+    affiliation: Telecom Paris, Computer Science
+  journal: Computo
+  issn: 2824-7795
+  url: https://computo-journal.org/published-202401-adrat-repulsion/
+  publisher:
+    name: French Statistical Society
+  doi: 10.57750/3r07-aw28
+  year: 2024
+doi: 10.57750/3r07-aw28
+date-released: '2024-01-01'
