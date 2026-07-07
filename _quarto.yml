@@ -6,6 +6,37 @@ project:
     - README.qmd
 
 status: published
+
+title: "Point Process Discrimination According to Repulsion"
+author:
+    - name: Hamza Adrat
+      corresponding: true
+      email: hamza.adrat@um6p.ma
+      url: https://www.linkedin.com/in/hamza-adrat/
+      orcid: 0009-0004-8155-3260
+      affiliations:
+        - name: Mohammed VI Polytechnic University
+          department: EMINES - School of Industrial Management
+          url: https://www.emines-ingenieur.org/
+    - name: Laurent Decreusefond
+      email: laurent.decreusefond@telecom-paris.fr
+      url: https://perso.telecom-paris.fr/~decreuse
+      orcid: 0000-0002-8964-0957
+      affiliations:
+        - name: Telecom Paris
+          department: Computer Science
+          url: https://telecom-paris.fr
+date: 01/25/2024
+abstract: >+
+    In numerous applications, cloud of points do seem to exhibit *repulsion* in the intuitive sense that there is no local cluster as in a Poisson process. Motivated by data coming from cellular networks, we devise a classification algorithm based on the form of the Voronoi cells. We show that, in the particular set of data we are given, we can retrieve some repulsiveness between antennas, which was expected for engineering reasons.
+citation:
+  type: article-journal
+  container-title: "Computo"
+  doi: "10.57750/3r07-aw28"
+  publisher: "French Statistical Society"
+  issn: "2824-7795"
+github-user: computorg
+repo: "published-202401-adrat-repulsion"
 format:
   computo-html:
     code-fold: true
