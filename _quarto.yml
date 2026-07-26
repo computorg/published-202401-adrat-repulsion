@@ -37,6 +37,7 @@ citation:
   issn: "2824-7795"
   url: "https://computo-journal.org/published-202401-adrat-repulsion/"
   issued: "2024-01-25"
+google-scholar: true
 related-identifiers:
   - relation: IsVersionOf
     type: URL
