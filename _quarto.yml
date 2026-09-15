@@ -1,6 +1,5 @@
 project:
-  title: "Point Process Discrimination According to Repulsion"
-  type: website
+  type: default
   render:
     - main.qmd
     - README.qmd
