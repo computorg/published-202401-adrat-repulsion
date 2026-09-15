@@ -47,3 +47,8 @@ repo: "published-202401-adrat-repulsion"
 format:
   computo-html:
     code-fold: true
+  computo-pdf: default
+date-modified: last-modified
+keywords: [classification, point process, repulsion]
+bibliography: references.bib
+jupyter: python3
